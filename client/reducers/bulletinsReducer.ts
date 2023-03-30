@@ -1,4 +1,6 @@
-import { REQUEST_BULLETINS, RECEIVE_BULLETINS, BulletinsActions } from '../actions/bulletinsAction'
+import { 
+  // REQUEST_BULLETINS, 
+  RECEIVE_BULLETINS, BulletinsActions } from '../actions/bulletinsAction'
 
 import {Bulletins} from '../../common/model'
 
