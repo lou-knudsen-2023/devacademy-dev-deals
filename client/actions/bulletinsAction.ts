@@ -1,15 +1,19 @@
 import type { ThunkAction } from '../store'
-import {Bulletins} from '../../common/model'
+import { Bulletins } from '../../common/model'
 import { fetchBulletinsAPI } from '../apis/ApiClient'
 
 export const REQUEST_BULLETINS = 'REQUEST_BULLETINS'
-
 export const RECEIVE_BULLETINS = 'RECEIVE_BULLETINS'
+export const ADD_BULLETIN = 'ADD_BULLETIN'
+export const DEL_BULLETIN = 'DEL_BULLETIN'
+export const UPDATE_BULLETIN = 'UPDATE_BULLETIN'
 
 export type BulletinsActions =
   |{ type: typeof REQUEST_BULLETINS, payload: null }
   |{ type: typeof RECEIVE_BULLETINS, payload: Bulletins[]}
-
+  |{ type: typeof ADD_BULLETIN, payload: Bulletins }
+  |{ type: typeof DEL_BULLETIN, payload: number }
+  |{ type: typeof UPDATE_BULLETIN, payload: Bulletins }
 
   // ACTION CREATORS
 export function getAllBulletins(): BulletinsActions { 
@@ -21,12 +25,35 @@ export function getAllBulletins(): BulletinsActions {
 
 
   // receive an array of objects
-export function receiveAllBulletins(collection: Bulletins[]): BulletinsActions{
+export function receiveAllBulletins(bulletin: Bulletins[]): BulletinsActions{
     return {
       type: RECEIVE_BULLETINS,
-      payload: collection
+      payload: bulletin
     }
   }
+
+export function addNewBulletin(bulletin: Bulletins): BulletinsActions {
+  return {
+    type: ADD_BULLETIN,
+    payload: bulletin
+  }
+}
+
+export function updateBulletin(bulletin: Bulletins): BulletinsActions {
+  return {
+    type: UPDATE_BULLETIN,
+    payload: bulletin
+  }
+}
+
+export function deleteBulletin(id: number) {
+  return {
+    type: DEL_BULLETIN,
+    payload: id
+  }
+}
+
+
 
   
   // THUNK
@@ -36,12 +63,10 @@ export function receiveAllBulletins(collection: Bulletins[]): BulletinsActions{
       //this is defined on this page
       console.log('1')
       dispatch(getAllBulletins())
-  
       //fetch from is api client
       return fetchBulletinsAPI()
         .then((data) => {
       console.log('2', data)
-
           //this is defined on this page
           dispatch(receiveAllBulletins(data))
         })

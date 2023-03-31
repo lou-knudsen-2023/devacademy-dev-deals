@@ -35,7 +35,6 @@ function MainBoard() {
             return (
                 <div key={singleBull.id}>
                     <h2>{singleBull.title}</h2>
-                    <img src={singleBull.image} alt="listing" />
                     <p>{singleBull.description}</p>
                     <p>{singleBull.phone}</p>
                 </div>
