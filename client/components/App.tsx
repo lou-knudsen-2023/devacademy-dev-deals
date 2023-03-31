@@ -1,4 +1,4 @@
-import MainBoard from "./MainBoard"
+import MainBoard from './MainBoard'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       </header>
       <section className="main">
         <MainBoard />
-        {/* <AddBul>letin /> */}
+        {/* <AddBulletin /> */}
       </section>
     </>
   )
