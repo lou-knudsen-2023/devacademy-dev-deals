@@ -1,9 +1,11 @@
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { fetchAllBulletins } from '../actions/bulletinsAction'
-import {
+import { 
   useEffect,
-  // useState
+   useState
 } from 'react'
+import { Link, Routes, Route } from 'react-router-dom'
+import EditBulletin from './EditBulletin'
 
 import type { Bulletins } from '../../common/model'
 import AddBulletin from './AddBulletin'
@@ -11,7 +13,7 @@ import AddBulletin from './AddBulletin'
 function MainBoard() {
   const dispatch = useAppDispatch()
 
-  // const [ currentList, setCurrentList ] = useState([] as Bulletins[])
+  const [ toggle, setToggle ] = useState(false)
 
   //look in reducers index.ts
   const bulletinsFromStore = useAppSelector(
@@ -20,7 +22,7 @@ function MainBoard() {
 
   useEffect(() => {
     dispatch(fetchAllBulletins())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
@@ -32,6 +34,10 @@ function MainBoard() {
               <img src={singleBull.image} alt="listing" />
               <p>{singleBull.description}</p>
               <p>{singleBull.phone}</p>
+              { toggle ? 
+               <EditBulletin thing={singleBull} />
+               :<button onClick={() => {setToggle(!toggle)}}>update</button> }
+        
             </div>
           )
         })}
@@ -49,3 +55,4 @@ export default MainBoard
 //     setCurrentList(bulletinArray)
 // })
 // .catch((err: Error) => alert(err.message))
+

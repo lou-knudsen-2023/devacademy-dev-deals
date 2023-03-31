@@ -72,7 +72,7 @@ router.patch('/:id', (req, res) => {
     .then((bulletin) => {
       // console.log(post)
       // res.json(post)
-      const [first] = bulletin
+      const first = bulletin[0]
       res.json(first)
     })
     .catch((err) => {
