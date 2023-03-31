@@ -1,6 +1,4 @@
 import MainBoard from './MainBoard'
-import { Routes, Route } from 'react-router-dom'
-import EditBulletin from './EditBulletin'
 
 function App() {
   return (
@@ -11,7 +9,6 @@ function App() {
       <section className="main">
         <MainBoard />
         {/* <AddBulletin /> */}
-        
       </section>
       
     </>

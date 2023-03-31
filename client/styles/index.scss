@@ -1,14 +1,21 @@
 * {
 box-sizing: border-box;
+
 }
 
 body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 20px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // margin: 0;
+  // padding: 20px;
+  // font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+background-image: url('./corkboard.jpg');
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+font-family: 'Permanent Marker', cursive;
 }
 
 .main {
@@ -27,7 +34,7 @@ body {
   position: relative;
   flex-direction: column;
   padding:  40px;
-  background-color: bisque;
+  background-color: #ffe37e;
   margin: 10px;
   width: 100%;
   @media (min-width: 768px){
@@ -64,8 +71,47 @@ body {
   height:16px;
   background-color: rgb(255, 0, 0);
   left: 27px;
-  top:27px;
+  top:28px;
   border-radius: 100%;
   box-shadow: 5px 5px 6px 0px rgb(0 0 0 / 15%);
   z-index: 10;
+}
+
+.formWrapper{
+  padding: 20px 20px 6%;
+  width: 100%;
+  background-color: #282727;
+  color:#fff;
+  margin-top: 8%;
+  box-shadow: 5px 5px 6px 0px rgb(0 0 0 / 10%);
+
+}
+
+form{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    label{
+      margin-right: 20px;
+    }
+   
+    button{
+      padding:10px 20px;
+      background-color: red;
+      color:#fff;
+      border:none;
+      font-weight: bold;
+      letter-spacing: 1px;
+  
+    }
+}
+
+h1{
+  text-align: center;
+  font-size: 6em;
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 5px #282727;
+  color:#fff
 }
