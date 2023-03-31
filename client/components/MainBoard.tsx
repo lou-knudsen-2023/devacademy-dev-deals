@@ -36,9 +36,7 @@ function MainBoard() {
           )
         })}
       </div>
-      <div className="formWrapper">
-        <AddBulletin />
-      </div>
+      <div className="formWrapper">{/* <AddBulletin /> */}</div>
     </>
   )
 }
