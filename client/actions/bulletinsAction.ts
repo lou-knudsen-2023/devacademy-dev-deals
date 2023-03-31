@@ -76,6 +76,14 @@ export function deleteBulletin(id: number) {
     }
   }
 
+  export function addNewAction(item: Bulletins): ThunkAction {
+    return(dispatch) => {
+      return someFn()
+    }
+  }
+
+  // DEL THUNK GOES HERE 
+
 
 
       // export function fetchBulletins(): Promise<Bulletins[]> {
