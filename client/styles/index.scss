@@ -1,6 +1,11 @@
 * {
-box-sizing: border-box;
-
+  box-sizing: border-box;
+  
+  
+  @font-face {
+    font-family: myFirstFont;
+    src: url(Your\ Doodle\ Font.ttf);
+  }
 }
 
 body {
@@ -84,8 +89,11 @@ font-family: 'Permanent Marker', cursive;
   color:#fff;
   margin-top: 8%;
   box-shadow: 5px 5px 6px 0px rgb(0 0 0 / 10%);
-
+  h2{
+    font-family: myFirstFont;
+  }
 }
+
 
 form{
   display: flex;
@@ -106,12 +114,20 @@ form{
       letter-spacing: 1px;
   
     }
-}
+  }
+  h1 {
+    font-family: myFirstFont;
+    color:#fff;
+    text-align: center;
+    font-size: 10em;
+    letter-spacing: 3px;
+    text-shadow: 5px 5px 5px #282727;
+  }
 
-h1{
-  text-align: center;
-  font-size: 6em;
-  letter-spacing: 3px;
-  text-shadow: 5px 5px 5px #282727;
-  color:#fff
-}
+// h1{
+//   text-align: center;
+//   font-size: 6em;
+//   letter-spacing: 3px;
+//   text-shadow: 5px 5px 5px #282727;
+//   color:#fff
+// }
