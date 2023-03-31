@@ -4,4 +4,5 @@ export interface Bulletins {
   description: string
   phone: string
   image: string
+  date: string
 }
