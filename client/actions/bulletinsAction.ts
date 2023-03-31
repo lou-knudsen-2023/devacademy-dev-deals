@@ -1,6 +1,6 @@
 import type { ThunkAction } from '../store'
 import { Bulletins } from '../../common/model'
-import { fetchBulletinsAPI } from '../apis/ApiClient'
+import { addBulletinAPI, fetchBulletinsAPI } from '../apis/ApiClient'
 
 export const REQUEST_BULLETINS = 'REQUEST_BULLETINS'
 export const RECEIVE_BULLETINS = 'RECEIVE_BULLETINS'
@@ -58,15 +58,12 @@ export function deleteBulletin(id: number) {
   
   // THUNK
   export function fetchAllBulletins(): ThunkAction{
-    console.log('b thunkin')
     return(dispatch) => {
       //this is defined on this page
-      console.log('1')
       dispatch(getAllBulletins())
       //fetch from is api client
       return fetchBulletinsAPI()
         .then((data) => {
-      console.log('2', data)
           //this is defined on this page
           dispatch(receiveAllBulletins(data))
         })
@@ -75,6 +72,19 @@ export function deleteBulletin(id: number) {
         })
     }
   }
+
+  export function addNewAction(item: Bulletins): ThunkAction {
+    return(dispatch) => {
+      return addBulletinAPI(item).then((data) => {
+        dispatch(addNewBulletin(data))
+      }) 
+      .catch((err) => {
+        return err.message
+      })
+    }
+  }
+
+  // DEL THUNK GOES HERE 
 
 
 

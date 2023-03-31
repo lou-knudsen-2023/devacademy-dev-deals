@@ -1,6 +1,6 @@
 import { 
   // REQUEST_BULLETINS, 
-  RECEIVE_BULLETINS, BulletinsActions } from '../actions/bulletinsAction'
+  RECEIVE_BULLETINS, BulletinsActions, ADD_BULLETIN } from '../actions/bulletinsAction'
 
 import {Bulletins} from '../../common/model'
 
@@ -18,6 +18,8 @@ function theReducer( state = initialState, action:BulletinsActions) : Bulletins[
     // case UPDATE_COLLECTION:
     //   console.log('state before update:', state);
     //   console.log('payload:', payload);
+      case ADD_BULLETIN:
+        return state.concat(payload)
       default: return state
     }
 
