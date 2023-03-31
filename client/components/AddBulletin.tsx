@@ -1,8 +1,5 @@
 // import { useAppSelector } from "../hooks/redux"
 
-function AddBulletin() {
-
-
-}
+function AddBulletin() {}
 
 export default AddBulletin
