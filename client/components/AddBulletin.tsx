@@ -1,17 +1,17 @@
 import { useAppDispatch } from "../hooks/redux"
 import {Bulletins} from '../../common/model'
 import { ChangeEvent, FormEvent, useState } from "react"
+import { addNewAction } from "../actions/bulletinsAction"
 
 interface Props {
     bulletin: Bulletins
 }
 
-function AddBulletin({ bulletin }: Props) {
+function AddBulletin() {
 
 const dispatch = useAppDispatch()
-const id = bulletin.id
 
-const [form, setForm] = useState(bulletin)
+const [form, setForm] = useState({} as Bulletins)
 
 const changeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
   setForm({
@@ -22,7 +22,7 @@ const changeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
 
 const submitHandler = (evt: FormEvent) => {
   evt.preventDefault()
-  dispatch()
+  dispatch(addNewAction(form))
 }
 
 
