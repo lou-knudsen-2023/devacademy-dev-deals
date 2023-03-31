@@ -24,6 +24,7 @@ function MainBoard() {
 
   return (
     <>
+
       <div className="boardWrapper">
         {bulletinsFromStore.map((singleBull: Bulletins) => {
           return (
@@ -34,6 +35,17 @@ function MainBoard() {
               <p>{singleBull.phone}</p>
             </div>
           )
+        {
+        // currentList && 
+        
+        bulletinsFromStore.map((singleBull: Bulletins) => {
+            return (
+                <div key={singleBull.id}>
+                    <h2>{singleBull.title}</h2>
+                    <p>{singleBull.description}</p>
+                    <p>{singleBull.phone}</p>
+                </div>
+            ) 
         })}
       </div>
       <div className="formWrapper">
